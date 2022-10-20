@@ -1,1 +1,1 @@
-# Not seek code not ready yet
+# Don't seek code not ready yet
