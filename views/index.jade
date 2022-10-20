@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(action="/chatbot/response", method="get") 
+    input(type="text", placeholder="Chat with bot!", name="query")
+    button(type="submit") Submit

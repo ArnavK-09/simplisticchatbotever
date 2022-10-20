@@ -1,2 +1,1 @@
-# simplisticchatbotever
-NOT READY
+# Not seek code not ready yet
