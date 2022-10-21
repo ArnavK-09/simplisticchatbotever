@@ -2,7 +2,8 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  form(action="/chatbot/response", method="get") 
-    input(type="text", placeholder="Chat with bot!", name="query")
-    button(type="submit") Submit
+  h4(id="status") 🟢 Bot Online!
+  div#allchats
+  form(id="userinputform") 
+    input(type="text", placeholder="Chat with bot!", name="query", id="inputforchat")
+    button(type="submit", class="enterbtn") Send

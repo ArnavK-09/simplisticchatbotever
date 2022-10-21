@@ -1,9 +1,116 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgba(82, 147, 245, 0.233)
+}
+* {
+  box-sizing: border-box;
 }
 
 a {
-  color: #00B7FF;
+  color: #4400ff;
   margin: 1px 5px;
+}
+
+#allchats {
+  padding: 5px 8px;
+  margin: 5px 0;
+  border: 2px;
+  border-color: black;
+  border-radius: 10px;
+  border-style: solid;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 40vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: aliceblue;
+}
+
+h5 {
+  margin: 10px 0;
+}
+
+.reply {
+	display: flex;
+	align-items: center;
+	margin: 1%;
+}
+.botreply {
+	margin-left: auto;
+}
+.userreply {
+	margin-right: auto;
+}
+
+/* width */
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000000b7; 
+}
+
+input[type=text] {
+  padding: 12px 20px;
+  background-color: aliceblue;
+  margin: 3px 4px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: aliceblue;
+  border: 5px;
+  width: 100%;
+}
+
+#userinputform {
+  display: flex;
+}
+
+.enterbtn {
+  background-color: aliceblue;
+  border: 1px;
+  border-color: #4400ff;
+  border-radius: 10px;
+  border-style: solid;
+  color: #4400ff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.enterbtn:hover {
+  background-color: #4400ff;
+  border: 1px;
+  border-color: aliceblue;
+  border-radius: 10px;
+  border-style: solid;
+  color: aliceblue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+  #userinputform {
+    display: grid;
+  }
 }
