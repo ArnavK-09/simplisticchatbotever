@@ -15,7 +15,7 @@ router.get('/bot/response', function(req, res) {
 });
 
 /* GET bot status. */
-router.get('/bot', function(res) {
+router.get('/bot', function(req, res) {
   res.send({
     uptime: process.uptime(),
     online: true,
