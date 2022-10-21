@@ -77,7 +77,10 @@ function updateChatWithBotReply(userChat, botChat) {
     // changing status 
     statusText.innerText = '🟢 Bot Online!';
     // adding reply 
-    chatsContainer.appendChild(botReply);
+    chatsContainer.appendChild(botReply);document.getElementById("allchats").scrollTop = document.getElementById("allchats").scrollHeight - document.getElementById("allchats").clientHeight;
+
+    // auto scroll
+    document.getElementById("allchats").scrollTop = document.getElementById("allchats").scrollHeight - document.getElementById("allchats").clientHeight;
   }, delay)
 }
 
