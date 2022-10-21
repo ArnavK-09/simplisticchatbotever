@@ -1,7 +1,7 @@
 {
   "name": "simplisticchatbotever",
   "version": "0.0.1",
-  "private": true,
+  "author": "ArnavK-09",
   "scripts": {
     "start": "node ./bin/www"
   },
