@@ -1,22 +1,22 @@
 // imports
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var indexRouter = require('./routes/index');
+import createError from 'http-errors';
+import express from 'express';
+import path from 'path';
+import logger from 'morgan';
+import indexRouter from './routes/routes.js';
 
 // new server
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', './views');
 app.set('view engine', 'jade');
 
 // plugins
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('./public'));
 
 // adding routes
 app.use('/', indexRouter);
@@ -38,4 +38,4 @@ app.use(function(err, req, res, next) {
 });
 
 // exporting app 
-module.exports = app;
+export default app;

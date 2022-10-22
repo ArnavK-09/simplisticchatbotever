@@ -21,11 +21,11 @@ try{
 }
 
 // processing bot reply
-function processBotReply(userInputNotFormatted) {
+export default function processBotReply(userInputNotFormatted, fromapi = false) {
   // formatting user input 
   let userInput = userInputNotFormatted.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
   userInput = userInput
-    .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
+    .replace(/ a /g, " ")
     .replace(/i feel /g, "")
     .replace(/whats/g, "what is")
     .replace(/please /g, "")
@@ -41,11 +41,15 @@ function processBotReply(userInputNotFormatted) {
   } 
   // If No Reply Found 
   else {
-      processedBotReply = ifNoDataFoundReplies[Math.floor(Math.random() * ifNoDataFoundReplies.length)];
+      processedBotReply = ifNoDataFoundReplies[Math.floor(Math.random() * ifNoDataFoundReplies.length)]; // random
     }
   
     // Updating Frontend 
-    updateChatWithBotReply(userInputNotFormatted, processedBotReply);
+    if(fromapi == false) {
+      updateChatWithBotReply(userInputNotFormatted, processedBotReply);
+    } else {
+      return processedBotReply;
+    }
 }
 
 // add reply to ui 
@@ -86,22 +90,30 @@ function updateChatWithBotReply(userChat, botChat) {
 
 // Processing data 
 function processData(prompts, replies, input) {
+  // sttaus variables 
   let reply;
   let replyFound = false;
+
+  // finding all prompts
   for (let x = 0; x < prompts.length; x++) {
+    // searching for replies 
     for (let y = 0; y < prompts[x].length; y++) {
       if (prompts[x][y] === input) {
-        let repliess = replies[x];
-        reply = repliess[Math.floor(Math.random() * repliess.length)];
+        // all replies mathed with input
+        let foundReplies = replies[x];
+        // random reply 
+        reply = foundReplies[Math.floor(Math.random() * foundReplies.length)];
+        // updating status 
         replyFound = true;
-        // Stop inner loop when input value matches prompts
+        // breaking loop
         break;
       }
     }
     if (replyFound) {
-      // Stop outer loop when reply is found instead of interating through the entire array
+      // if reply break loop 
       break;
     }
   }
+  // return reply 
   return reply;
 }
