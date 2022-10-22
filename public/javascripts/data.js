@@ -25,7 +25,6 @@ export const userInputs = [
   ["no", "not sure", "maybe", "no thanks"],
   [""],
   ["haha", "ha", "lol", "hehe", "funny", "joke"],
-  ["Bot-Api-Invalid-Param"] // for api red
 ]
 
 // Possible responses, in corresponding order
@@ -58,7 +57,6 @@ export const botReplies = [
   ["That's ok", "I understand", "What do you want to talk about?"],
   ["Please say something :("],
   ["Haha!", "Good one!"],
-  [`Wait you didn't add query, Bot reply endpoint is - /bot/response/:chat, Example - /bot/response/Hi`] // api res
 ]
 
 // Random for any other user input

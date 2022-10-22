@@ -11,6 +11,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Simplistic Chatbot Ever!' });
 });
 
+/* GET info. */
+router.get('/bot/response/', function(req, res) {
+  // reponse
+  res.status(200).send({ 
+    info: 'Invalid Param',
+    response: processBotReply('somethingnotindata', true)
+  });
+});
+
 /* GET bot reponse. */
 router.get('/bot/response/:chat', function(req, res) {
   // query 
@@ -22,7 +31,7 @@ router.get('/bot/response/:chat', function(req, res) {
   }
 
   // reponse
-  res.status(204).send({ 
+  res.status(200).send({ 
     chat,
     response: processBotReply(chat, true)
   });
