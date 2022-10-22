@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "ArnavK-09",
   "type": "module",
+  "main": "./bin/www",
   "scripts": {
     "start": "node ./bin/www"
   },
