@@ -7,7 +7,7 @@ import http from 'http';
 debug('simplisticchatbotever:server');
 
 // Port setup 
-var port = normalizePort('6699');
+var port = normalizePort('3000');
 app.set('port', port);
 
 // server 
