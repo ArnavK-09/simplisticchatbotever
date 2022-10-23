@@ -1,10 +1,6 @@
 // Import 
 import app from '../app.js';
-import debug from 'debug';
 import http from 'http';
-
-// Debug setup 
-debug('simplisticchatbotever:server');
 
 // Port setup 
 var port = normalizePort('3000');
@@ -64,8 +60,7 @@ function onError(error) {
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-  console.log("🟢 Server Started !")
+    ? addr
+    : addr.port;
+  console.log("🟢 Server Started On Port:", bind)
 }

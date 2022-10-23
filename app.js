@@ -1,7 +1,6 @@
 // imports
 import createError from 'http-errors';
 import express from 'express';
-import path from 'path';
 import logger from 'morgan';
 import indexRouter from './routes/routes.js';
 
