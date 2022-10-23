@@ -1,6 +1,6 @@
 {
   "name": "simplisticchatbotever",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "author": "ArnavK-09",
   "type": "module",
   "main": "bin/www.js",
