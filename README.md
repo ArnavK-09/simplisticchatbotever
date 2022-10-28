@@ -1,4 +1,4 @@
-# Simplistic Chat Bot Ever v2.0
+# Simplistic Chat Bot Ever v2.0.1
 > Just a static chatbot using custom data
 
 ## Screenshot
@@ -16,7 +16,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd simplisticchatbotever
 ```
 
 Install all dependencies
