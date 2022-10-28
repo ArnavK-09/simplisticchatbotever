@@ -1,4 +1,4 @@
-# Simplistic Chat Bot Ever v2.0.1
+# Simplistic Chat Bot Ever v2.0.2
 > Just a static chatbot using custom data
 
 ## Screenshot
@@ -28,7 +28,7 @@ Install all dependencies
 Start the server
 
 ```bash
-  npm run 
+  npm run start 
  ```
   
 ## Tech Stack
