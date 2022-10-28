@@ -1,6 +1,5 @@
-a(href="/") Home
-a(href="/bot", target="_blank") Status 
-a(href="/bot/response/hi") Bot Response Api 
-a(href="https://github.com/ArnavK-09/simplisticchatbotever", target="_blank") Source Github
-a(href="javascripts/data.js") All feeded data
+- links = [{title: 'Home', url: '/', target: '_self'},{title: 'Status', url: '/api', target: '_self'},{title: 'Bot Response Api', url: '/api/response/hi', target: '_self'},{title: 'Source Code', url: 'https://github.com/ArnavK-09/simplisticchatbotever', target: '_blank'},{title: 'All Feeded Data', url: '/javascripts/data.js', target: '_blank'}]
+
+each link in links
+   a(href=link.url, target=link.target) #{link.title}
 br

@@ -1,5 +1,5 @@
 // importing chat replies data
-import { userInputs, botReplies, ifNoDataFoundReplies } from "./data.js";
+import { ifNoDataFoundReplies, feededChatBotData } from "./data.js";
 
 // on chat submit
 try{
@@ -36,8 +36,8 @@ export default function processBotReply(userInputNotFormatted, fromapi = false) 
   var processedBotReply;
 
   // Check in feeded data 
-  if (processData(userInputs, botReplies, userInput)) { 
-      processedBotReply = processData(userInputs, botReplies, userInput);
+  if (processData(userInput)) { 
+      processedBotReply = processData(userInput);
   } 
   // If No Reply Found 
   else {
@@ -89,31 +89,23 @@ function updateChatWithBotReply(userChat, botChat) {
 }
 
 // Processing data 
-function processData(prompts, replies, input) {
-  // sttaus variables 
+function processData(input) {
+  // status variables 
   let reply;
-  let replyFound = false;
-
+  
   // finding all prompts
-  for (let x = 0; x < prompts.length; x++) {
+  for (let x = 0; x < feededChatBotData.length; x++) {
+    // variables 
+    let prompts = feededChatBotData[x].inputs.toString().split(',');
+    let replies = feededChatBotData[x].outputs.toString().split(',');
+
     // searching for replies 
-    for (let y = 0; y < prompts[x].length; y++) {
-      if (prompts[x][y] === input) {
-        // all replies mathed with input
-        let foundReplies = replies[x];
-        // random reply 
-        reply = foundReplies[Math.floor(Math.random() * foundReplies.length)];
-        // updating status 
-        replyFound = true;
-        // breaking loop
-        break;
-      }
-    }
-    if (replyFound) {
-      // if reply break loop 
-      break;
+    if(prompts.includes(input.toLowerCase())) {
+      reply = replies[Math.floor(Math.random() * replies.length)];
+      break
     }
   }
+
   // return reply 
   return reply;
 }

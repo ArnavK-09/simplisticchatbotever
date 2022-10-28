@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET info. */
-router.get('/bot/response/', function(req, res) {
+router.get('/api/response/', function(req, res) {
   // reponse
   res.status(200).send({ 
     info: 'Invalid Param',
@@ -21,24 +21,24 @@ router.get('/bot/response/', function(req, res) {
 });
 
 /* GET bot reponse. */
-router.get('/bot/response/:chat', function(req, res) {
+router.get('/api/response/:input', function(req, res) {
   // query 
-  let chat = req.params['chat'];
+  let input = req.params['input'];
 
   // validating 
-  if(chat == undefined || chat == null) {
-    chat = ''
+  if(input == undefined || input == null) {
+    input = ''
   }
 
   // reponse
   res.status(200).send({ 
-    chat,
-    response: processBotReply(chat, true)
+    input,
+    response: processBotReply(input, true)
   });
 });
 
 /* GET bot status. */
-router.get('/bot', function(req, res) {
+router.get('/api', function(req, res) {
   res.send({
     online: true,
     uptime: process.uptime(),
