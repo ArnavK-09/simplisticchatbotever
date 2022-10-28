@@ -1,4 +1,4 @@
-# Simplistic Chat Bot Ever
+# Simplistic Chat Bot Ever v1.0.1
 > Just a timepass repo tho
 
 ## Screenshot
