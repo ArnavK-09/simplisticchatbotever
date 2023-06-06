@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 /* GET info. */
 router.get('/api/response/', function(req, res) {
   // reponse
-  res.status(200).send({ 
+  res.status(400).send({ 
     info: 'Invalid Param',
     response: processBotReply('somethingnotindata', true)
   });
